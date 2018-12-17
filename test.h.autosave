@@ -1,0 +1,23 @@
+#ifndef TEST_H
+#define TEST_H
+#include "deadline.h"
+#include <time.h>
+
+
+class Test: public Deadline
+{
+public:
+    Test();
+    Test(time_t&, std::string&, int&,std::string&, std::string&);
+    Test(Test const &);
+    void setTopic(std::string const &topic);
+    std::string getTopic() {return _topic;}
+    void update();
+    Kind getKind() {return TEST;}
+    ~Test();
+private:
+    std::string _topic;
+};
+
+
+#endif // TEST_H
